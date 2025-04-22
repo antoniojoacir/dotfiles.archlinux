@@ -1,0 +1,118 @@
+/* @import "./themes/mocha.css"; */
+@import "colors.css";
+
+* {
+  font-family: "JetBrainsMono Nerd Font Propo";
+  font-size: 17px;
+  min-height: 0;
+}
+
+#waybar {
+  background-color: transparent;
+  color: @on_background;
+  margin: 5px 0px;
+}
+
+#workspaces {
+  border-radius: 10px;
+  background-color: @surface_container_high;
+  border: 2px solid @outline;
+
+  margin: 5px;
+}
+
+#workspaces button {
+  color: @primary;
+  border-radius: 20px;
+  padding: 0.5rem;
+  margin: 0px 5px 0px 5px;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+#workspaces button.active {
+  color: @on_primary_container;
+  background-color: @primary_container;
+}
+
+#workspaces button:hover {
+  color: @secondary;
+  background-color: @surface_container;
+}
+
+#tray,
+#backlight,
+#clock,
+#battery,
+#memory,
+#cpu,
+#pulseaudio,
+#custom-paddc,
+#custom-power {
+  background-color: @surface_container_high;
+  border: 2px solid @outline;
+  border-width: 2px 0px 2px 0px;
+  padding: 0.5rem 1rem;
+  margin: 5px 0;
+}
+
+#clock {
+  color: @tertiary;
+  border-radius: 10px;
+
+  border-width: 2px 2px 2px 2px;
+}
+
+#battery {
+  color: @tertiary;
+}
+
+#battery.charging {
+  color: @on_secondary_container;
+}
+
+#battery.warning:not(.charging) {
+  color: @error;
+}
+
+#backlight {
+  color: @tertiary_fixed_dim;
+}
+
+#backlight,
+#battery {
+  border-radius: 0;
+}
+
+#cpu {
+  color: @primary_fixed_dim;
+  border-radius: 10px 0px 0px 10px;
+  border-width: 2px 0px 2px 2px;
+}
+
+#memory {
+  color: @secondary;
+}
+
+#pulseaudio {
+  color: @inverse_primary;
+}
+
+#custom-power {
+  margin-right: 5px;
+  color: @error;
+  border-radius: 0px 10px 10px 0px;
+  border-width: 2px 2px 2px 0px;
+}
+
+#workspaces button,
+#custom-music,
+#tray,
+#backlight,
+#clock,
+#battery,
+#pulseaudio,
+#custom-lock,
+#custom-power {
+  transition: all 0.3s ease;
+}
