@@ -68,8 +68,8 @@
     },
     "clock": {
         "timezone": "America/Fortaleza",
-        "tooltip-format": "<span size='12pt'>{calendar}</span>",
-        "format": "  {:%H:%M %p %d %b %Y}",
+        "tooltip-format": "<span size='15pt'>{calendar}</span>",
+        "format": " {:%H:%M %p %d %b %Y}",
         "calendar": {
             "on-scroll": 1,
             "format": {
@@ -93,6 +93,7 @@
         "max_volume": 100
     },
     "battery": {
+        "interval": 5,
         "states": {
             "good": 95,
             "warning": 30,
