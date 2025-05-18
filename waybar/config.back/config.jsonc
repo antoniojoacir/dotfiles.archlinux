@@ -4,8 +4,7 @@
 	"spacing": 0,
 	"height": 34,
 	"modules-left": [
-		"hyprland/workspaces",
-		"hyprland/window"
+		"hyprland/workspaces"
 	],
 	"modules-center": [
 		"clock"
@@ -18,10 +17,6 @@
 		"tray",
 		"custom/power"
 	],
-	"hyprland/window": {
-		"format": "{initialTitle}",
-		"separate-outputs": true
-	},
 	"hyprland/workspaces": {
 		"disable-scroll": true,
 		"all-outputs": true,
@@ -73,9 +68,9 @@
 		"format-muted": "",
 		"format-icons": {
 			"default": [
-				"󰕿",
-				"󰖀",
-				"󰕾"
+				"",
+				"",
+				""
 			]
 		},
 		"on-click": "pavucontrol",
@@ -83,30 +78,26 @@
 		"max_volume": 100
 	},
 	"battery": {
-		"interval": 2,
+		"interval": 5,
 		"states": {
 			"good": 95,
-			"warning": 40,
+			"warning": 30,
 			"critical": 15
 		},
 		"format": "{icon} {capacity}%",
 		"format-icons": [
-			"󰁺",
-			"󰁻",
-			"󰁼",
-			"󰁽",
-			"󰁾",
-			"󰁿",
-			"󰂀",
-			"󰂁",
-			"󰂂"
+			"",
+			"",
+			"",
+			"",
+			""
 		],
 		"rotate": 0,
-		"format-charging": "󱐋 {capacity}%",
+		"format-charging": " {capacity}%",
 		"format-plugged": " {capacity}%"
 	},
 	"custom/power": {
-		"format": "󰐥",
+		"format": "󰤆",
 		"tooltip": false,
 		"on-click": "~/.config/rofi/powermenu/type-2/powermenu.sh &"
 	}

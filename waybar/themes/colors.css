@@ -1,0 +1,9 @@
+@define-color bg #0d0d0d;
+@define-color fg #f5f5f5;
+@define-color outline #f5fffa;
+@define-color charging #258c1e;
+@define-color battery #1fc015;
+@define-color error #ec2300;
+@define-color active #002480;
+@define-color hover #122fa2;
+@define-color warning #ffd700;

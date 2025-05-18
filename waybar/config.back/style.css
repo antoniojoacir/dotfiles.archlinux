@@ -1,4 +1,4 @@
-@import "./themes/colors.css";
+@import "./themes/matugen.css";
 
 * {
 	font-family: "Iosevka Nerd Font Propo";
@@ -8,17 +8,18 @@
 
 #waybar {
 	background-color: transparent;
+	color: @on_background;
 }
 
 #workspaces {
-	border-radius: 5px;
-	background-color: @bg;
+	border-radius: 10px;
+	background-color: @surface_container_high;
 	border: 2px solid @outline;
 	margin: 5px 0 0 5px;
 }
 
 #workspaces button {
-	color: @fg;
+	color: @primary;
 	border-radius: 10px;
 	padding: 0 5px;
 	margin: 5px;
@@ -27,36 +28,25 @@
 }
 
 #workspaces button.active {
-	background-color: @active;
+	color: @on_primary_container;
+	background-color: @primary_container;
 }
 
 #workspaces button:hover {
-	color: @bg;
-	background-color: @hover;
-}
-
-#window {
-	background-color: @bg;
-	color: @fg;
-	margin: 5px 0 0 20px;
-	padding: 0 5px;
-	border: 2px solid @outline;
-	border-radius: 5px;
-}
-
-window#waybar.empty #window {
-	background-color: transparent;
-	border-width: 0;
+	color: @secondary;
+	background-color: @surface_container;
 }
 
 #tray,
+#backlight,
 #clock,
 #battery,
 #memory,
 #cpu,
 #pulseaudio,
+#custom-paddc,
 #custom-power {
-	background-color: @bg;
+	background-color: @surface_container_high;
 	border: 2px solid @outline;
 	border-width: 2px 0px 2px 0px;
 	padding: 0.5rem 10px;
@@ -64,41 +54,50 @@ window#waybar.empty #window {
 }
 
 #clock {
-	color: @fg;
-	border-radius: 5px;
+	color: @tertiary;
+	border-radius: 10px;
 	border-width: 2px 2px 2px 2px;
 }
 
 #battery {
-	color: @battery;
+	color: @tertiary;
+}
+
+#battery.charging {
+	color: @on_secondary_container;
 }
 
 #battery.warning:not(.charging) {
-	color: @warning;
-}
-
-#battery.plugged {
-	color: @charging;
-}
-
-#battery.critical:not(.charging) {
 	color: @error;
-	animation-name: blink;
-	animation-duration: 0.5s;
-	animation-timing-function: linear;
-	animation-iteration-count: infinite;
-	animation-direction: alternate;
+}
+
+#backlight {
+	color: @tertiary_fixed_dim;
+}
+
+#backlight,
+#battery {
+	border-radius: 0;
 }
 
 #cpu {
-	border-radius: 5px 0px 0px 5px;
+	color: @primary_fixed_dim;
+	border-radius: 10px 0px 0px 10px;
 	border-width: 2px 0px 2px 2px;
+}
+
+#memory {
+	color: @secondary;
+}
+
+#pulseaudio {
+	color: @inverse_primary;
 }
 
 #custom-power {
 	margin-right: 5px;
 	color: @error;
-	border-radius: 0px 5px 5px 0px;
+	border-radius: 0px 10px 10px 0px;
 	border-width: 2px 2px 2px 0px;
 }
 
