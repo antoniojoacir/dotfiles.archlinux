@@ -11,18 +11,19 @@
 }
 
 #workspaces {
-	border-radius: 5px;
 	background-color: @bg;
 	border: 2px solid @outline;
-	margin: 5px 0 0 5px;
+	border-radius: 5px;
+	margin-top: 5px;
+	margin-left: 5px;
 }
 
 #workspaces button {
 	color: @fg;
-	border-radius: 10px;
-	padding: 0 5px;
-	margin: 5px;
 	background-color: transparent;
+	border-radius: 3px;
+	padding: 0 10px;
+	margin: 3px;
 	transition: all 0.3s ease;
 }
 
@@ -50,23 +51,28 @@ window#waybar.empty #window {
 }
 
 #tray,
-#clock,
 #battery,
 #memory,
 #cpu,
 #pulseaudio,
 #custom-power {
+	color: @fg;
 	background-color: @bg;
-	border: 2px solid @outline;
-	border-width: 2px 0px 2px 0px;
-	padding: 0.5rem 10px;
-	margin: 5px 0 0;
+	border-top-width: 2px;
+	border-bottom-width: 2px;
+	border-style: solid;
+	border-color: @outline;
+	padding: 5px 10px;
+	margin-top: 5px;
 }
 
 #clock {
 	color: @fg;
+	background-color: @bg;
+	border: 2px solid @outline;
 	border-radius: 5px;
-	border-width: 2px 2px 2px 2px;
+	padding: 0 10px;
+	margin-top: 5px;
 }
 
 #battery {
@@ -92,14 +98,14 @@ window#waybar.empty #window {
 
 #cpu {
 	border-radius: 5px 0px 0px 5px;
-	border-width: 2px 0px 2px 2px;
+	border-left-width: 3px;
 }
 
 #custom-power {
 	margin-right: 5px;
 	color: @error;
 	border-radius: 0px 5px 5px 0px;
-	border-width: 2px 2px 2px 0px;
+	border-right-width: 2px;
 }
 
 #workspaces button,
