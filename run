@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+XDG_HOME_CONFIG=$HOME/.config
+
+for item in *; do
+	if [[ $item != 'run' ]]; then
+		cp -uvr "$XDG_HOME_CONFIG/$item" .
+	fi
+done
