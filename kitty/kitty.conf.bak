@@ -18,6 +18,6 @@ bold_italic_font auto
 
 
 # BEGIN_KITTY_THEME
-# Gruvbox Dark Hard
+# Base16-Black-Metal-Bathory
 include current-theme.conf
 # END_KITTY_THEME
