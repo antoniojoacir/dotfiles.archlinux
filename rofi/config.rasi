@@ -1,2 +1,12 @@
+//@theme "/usr/share/rofi/themes/android_notification.rasi"
 
-@theme "/usr/share/rofi/themes/android_notification.rasi"
+configuration {
+    show-icons: true;
+}
+
+element-icon {
+    size: 64px; /* Ou outro tamanho de sua preferência */
+    /* Outras propriedades de estilo podem ser adicionadas aqui */
+}
+
+@theme "/usr/share/rofi/themes/gruvbox-dark-hard.rasi"

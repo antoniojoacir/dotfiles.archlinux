@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #  ██╗    ██╗ █████╗ ██╗     ██╗     ██████╗  █████╗ ██████╗ ███████╗██████╗
 #  ██║    ██║██╔══██╗██║     ██║     ██╔══██╗██╔══██╗██╔══██╗██╔════╝██╔══██╗
 #  ██║ █╗ ██║███████║██║     ██║     ██████╔╝███████║██████╔╝█████╗  ██████╔╝
@@ -22,7 +22,8 @@
 # Set some variables
 wall_dir="${HOME}/Pictures/wallpapers"
 cacheDir="${HOME}/.cache/jp/${theme}"
-rofi_command="rofi -x11 -dmenu -theme ${HOME}/.config/rofi/config-wallpaper-select.rasi -theme-str ${rofi_override}"
+hyprpaper_conf="${HOME}/.config/hypr/hyprpaper.conf"
+rofi_command="rofi -x11 -dmenu -theme ${HOME}/.config/rofi/config/wallpaper-select.rasi -theme-str ${rofi_override}"
 
 # Create cache dir if not exists
 if [ ! -d "${cacheDir}" ] ; then
@@ -36,8 +37,8 @@ dotsperinch=$(echo "scale=2; $monitor_res / $physical_monitor_size" | bc | xargs
 monitor_res=$(( $monitor_res * $physical_monitor_size / $dotsperinch ))
 
 rofi_override="element-icon{size:${monitor_res}px;border-radius:0px;}"
-
-# Convert images in directory and save to cache dir
+#
+# # Convert images in directory and save to cache dir
 # for imagen in "$wall_dir"/*.{jpg,jpeg,png,webp}; do
 # 	if [ -f "$imagen" ]; then
 # 		nombre_archivo=$(basename "$imagen")
@@ -50,7 +51,7 @@ rofi_override="element-icon{size:${monitor_res}px;border-radius:0px;}"
 find "${wall_dir}" -maxdepth 1 -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" \) | while read -r imagen; do
     nombre_archivo=$(basename "$imagen")
     if [ ! -f "${cacheDir}/${nombre_archivo}" ]; then
-        magick "$imagen" -strip -thumbnail 400x400^ -gravity center -extent 400x400 "${cacheDir}/${nombre_archivo}"
+        magick "$imagen" -strip -thumbnail 600x600^ -gravity center -extent 600x600 "${cacheDir}/${nombre_archivo}"
     fi
 done
 
@@ -59,6 +60,15 @@ wall_selection=$(find "${wall_dir}"  -maxdepth 1  -type f \( -iname "*.jpg" -o -
 
 # Set the wallpaper
 [[ -n "$wall_selection" ]] || exit 1
+
+sed -i "s|^preload = .*|preload = ${wall_dir}/${wall_selection}|" "${hyprpaper_conf}"
+sed -i "s|^wallpaper = .*|wallpaper = ,${wall_dir}/${wall_selection}|" "${hyprpaper_conf}"
+
 matugen image ${wall_dir}/${wall_selection}
+hyprctl hyprpaper preload ${wall_dir}/${wall_selection}
+for monitor in $(hyprctl monitors | grep 'Monitor' | awk '{print $2}'); do
+	hyprctl hyprpaper wallpaper "$monitor,${wall_dir}/${wall_selection}"
+done
+hyprctl hyprpaper unload all
 
 exit 0

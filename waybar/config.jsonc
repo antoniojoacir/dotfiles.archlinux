@@ -1,37 +1,30 @@
 {
 	"layer": "top",
 	"position": "top",
+	"height": 30,
 	"spacing": 0,
-	"height": 34,
 	"modules-left": [
 		"hyprland/workspaces"
-		// "hyprland/window"
 	],
-	"modules-center": [
-		"clock"
-	],
+	// "modules-center": [
+	// ],
 	"modules-right": [
 		"cpu",
 		"memory",
 		"pulseaudio",
 		"battery",
 		"tray",
+		"clock",
 		"custom/power"
 	],
-	"hyprland/window": {
-		"format": "{initialTitle}",
-		"separate-outputs": true
-	},
 	"hyprland/workspaces": {
-		"disable-scroll": true,
-		"all-outputs": true,
-		"warp-on-scroll": false,
-		"format": "{name}",
+		"format": "{icon}",
+		"on-click": "activate",
 		"format-icons": {
-			"urgent": "",
-			"active": "",
+			"urgent": "",
 			"default": ""
-		}
+		},
+		"sort-by-number": true
 	},
 	"cpu": {
 		"interval": 10,
@@ -50,37 +43,35 @@
 	},
 	"memory": {
 		"interval": 10,
-		"format": " {used:0.1f}G",
-		"max-length": 10
+		"format": " {used:0.1f}G/{total:0.1f}G "
+		// "max-length": 10
+	},
+	"keyboard-state": {
+		"numlock": true,
+		"capslock": true,
+		"format": {
+			"capslock": "C {icon} ",
+			"numlock": "N {icon}"
+		},
+		"format-icons": {
+			"locked": "",
+			"unlocked": ""
+		}
 	},
 	"tray": {
+		// "icon-size": 21,
 		"spacing": 10
 	},
 	"clock": {
 		"timezone": "America/Fortaleza",
 		"tooltip-format": "<span size='15pt'>{calendar}</span>",
-		"format": " {:%H:%M %p %d %b %Y}",
+		"format": " {:%H:%M %p %d %b %Y}",
 		"calendar": {
-			"on-scroll": 1,
 			"format": {
 				"weekdays": "<span color='#ffcc66'><b>{}</b></span>",
-				"today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+				"today": "<span color='#ff6699'><b>{}</b></span>"
 			}
 		}
-	},
-	"pulseaudio": {
-		"format": "{icon} {volume}%",
-		"format-muted": "",
-		"format-icons": {
-			"default": [
-				"󰕿",
-				"󰖀",
-				"󰕾"
-			]
-		},
-		"on-click": "pavucontrol",
-		"tooltip": true,
-		"max_volume": 100
 	},
 	"battery": {
 		"interval": 2,
@@ -90,7 +81,11 @@
 			"critical": 15
 		},
 		"format": "{icon} {capacity}%",
+		"rotate": 0,
+		"format-charging": "󱐋 {capacity}%",
+		"format-plugged": " {capacity}%",
 		"format-icons": [
+			"󰂎",
 			"󰁺",
 			"󰁻",
 			"󰁼",
@@ -99,15 +94,32 @@
 			"󰁿",
 			"󰂀",
 			"󰂁",
-			"󰂂"
-		],
-		"rotate": 0,
-		"format-charging": "󱐋 {capacity}%",
-		"format-plugged": " {capacity}%"
+			"󰂂",
+			"󰁹"
+		]
+	},
+	"pulseaudio": {
+		"format": "{icon} {volume}%",
+		"format-muted": "  ",
+		"format-icons": {
+			"default": [
+				"",
+				"",
+				""
+			]
+		},
+		"on-click": "pavucontrol"
 	},
 	"custom/power": {
-		"format": "󰐥",
+		"format": "⏻ ",
 		"tooltip": false,
-		"on-click": "~/.config/rofi/powermenu/type-2/powermenu.sh &"
+		"menu": "on-click",
+		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
+		"menu-actions": {
+			"shutdown": "shutdown",
+			"reboot": "reboot",
+			"suspend": "systemctl suspend",
+			"hibernate": "systemctl hibernate"
+		}
 	}
 }

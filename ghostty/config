@@ -1,12 +1,12 @@
 font-family = "Iosevka Nerd Font Mono"
-font-size = 13
+font-size = 15
 
 resize-overlay = never
 
 background-opacity = 0.95
 background-blur = true
 
-theme = base16-black-metal-bathory
+theme = rose-pine
 
 mouse-hide-while-typing = true
 
