@@ -13,3 +13,8 @@ output_path = '~/.config/rofi/colors.rasi'
 input_path = '~/.config/matugen/templates/kitty-colors.conf'
 output_path = '~/.config/kitty/themes/colors.conf'
 post_hook = "kitty +kitten themes --reload-in=all colors"
+
+[templates.dunst]
+input_path = '~/.config/matugen/templates/dunstrc-colors'
+output_path = '~/.config/dunst/dunstrc'
+post_hook = 'pkill -SIGUSR2 dunst'

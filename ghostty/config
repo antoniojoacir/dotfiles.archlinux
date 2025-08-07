@@ -3,10 +3,10 @@ font-size = 15
 
 resize-overlay = never
 
-background-opacity = 0.95
+background-opacity = 0.9
 background-blur = true
 
-theme = rose-pine
+theme = base16-black-metal-bathory
 
 mouse-hide-while-typing = true
 

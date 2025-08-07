@@ -11,14 +11,14 @@
 
 window#waybar {
 	background-color: transparent;
-	padding: 5px 5px 0 5px;
+	padding: 5px;
 }
-
+#mpris,
 #workspaces {
 	background-color: @background;
 	color: @on_background;
-	padding: 5px 8px;
-	border-radius: 10px;
+	padding: 4px 5px;
+	border-radius: 8px;
 	border: 2px solid @outline;
 	margin: 5px 0 0 5px;
 }

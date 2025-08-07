@@ -4,10 +4,10 @@
 	"height": 30,
 	"spacing": 0,
 	"modules-left": [
-		"hyprland/workspaces"
+		"hyprland/workspaces",
+		"mpris"
 	],
-	// "modules-center": [
-	// ],
+	"modules-center": [],
 	"modules-right": [
 		"cpu",
 		"memory",
@@ -18,13 +18,26 @@
 		"custom/power"
 	],
 	"hyprland/workspaces": {
-		"format": "{icon}",
+		"format": "{name}: {icon}",
 		"on-click": "activate",
 		"format-icons": {
 			"urgent": "",
-			"default": ""
+			"active": "",
+			"default": ""
 		},
 		"sort-by-number": true
+	},
+	"mpris": {
+		"format": "{player_icon} {title} - {artist}",
+		"format-paused": "{status_icon} {title} - {artist}",
+		"title-len": 40,
+		"player-icons": {
+			"default": "▶",
+			"mpv": "🎵"
+		},
+		"status-icons": {
+			"paused": "⏸"
+		}
 	},
 	"cpu": {
 		"interval": 10,
@@ -59,7 +72,6 @@
 		}
 	},
 	"tray": {
-		// "icon-size": 21,
 		"spacing": 10
 	},
 	"clock": {
@@ -114,7 +126,7 @@
 		"format": "⏻ ",
 		"tooltip": false,
 		"menu": "on-click",
-		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
+		"menu-file": "$HOME/.config/waybar/power_menu.xml",
 		"menu-actions": {
 			"shutdown": "shutdown",
 			"reboot": "reboot",
