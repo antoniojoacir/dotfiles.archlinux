@@ -3,10 +3,10 @@ font-size = 13
 
 resize-overlay = never
 
-background-opacity = 0.9
+background-opacity = 0.98
 background-blur = true
 
-theme = rose-pine 
+theme = tokyonight_night
 
 mouse-hide-while-typing = true
 

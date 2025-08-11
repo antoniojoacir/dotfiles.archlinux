@@ -13,6 +13,7 @@ window#waybar {
 	background-color: transparent;
 	padding: 5px;
 }
+
 #mpris,
 #workspaces {
 	background-color: @background;
@@ -21,6 +22,10 @@ window#waybar {
 	border-radius: 8px;
 	border: 2px solid @outline;
 	margin: 5px 0 0 5px;
+}
+
+#mpris {
+	margin-left: 15px;
 }
 
 #workspaces button {

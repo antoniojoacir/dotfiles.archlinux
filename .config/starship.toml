@@ -60,7 +60,6 @@ symbol = ".NET "
 
 [directory]
 read_only = " ro"
-truncation_length = 1
 
 [docker_context]
 symbol = "docker "
