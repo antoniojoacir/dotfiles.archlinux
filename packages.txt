@@ -101,6 +101,7 @@ smartmontools
 sof-firmware
 starship
 stow
+swaync
 texlive-fontutils
 texlive-langchinese
 thorium-browser-bin
@@ -232,6 +233,7 @@ vmware-keymaps
 vulkan-intel
 waybar
 webfont-kit-generator
+wezterm
 wget
 wireless_tools
 wireplumber
