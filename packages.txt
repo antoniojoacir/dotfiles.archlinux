@@ -100,6 +100,7 @@ slurp
 smartmontools
 sof-firmware
 starship
+steam
 stow
 swaync
 texlive-fontutils
