@@ -18,7 +18,6 @@ fd
 feh
 fish
 fzf
-ghostty
 git
 github-cli
 go
@@ -32,7 +31,6 @@ gst-plugins-ugly
 gtk-theme-material-black
 haskell-sdl2-ttf
 htop
-hyprland
 hyprpaper
 intel-media-driver
 intel-ucode
@@ -43,14 +41,9 @@ less
 libpulse
 libva-intel-driver
 libva-utils
-linux
-linux-firmware
-linux-headers
-linux-lts-headers
 luarocks
 ly
 man-db
-matugen-bin
 mpd
 nano
 neovim
@@ -100,12 +93,10 @@ slurp
 smartmontools
 sof-firmware
 starship
-steam
 stow
 swaync
 texlive-fontutils
 texlive-langchinese
-thorium-browser-bin
 tmux
 tree
 ttf-0xproto-nerd
@@ -225,12 +216,9 @@ ttf-ubuntu-nerd
 ttf-victor-mono-nerd
 ttf-vlgothic
 ttf-zed-mono-nerd
-ueberzug
 unzip
 uwsm
 vim
-vmware-host-modules-dkms-fix-git
-vmware-keymaps
 vulkan-intel
 waybar
 webfont-kit-generator
@@ -247,9 +235,6 @@ xf86-video-intel
 xorg-server
 xorg-xinit
 yarn
-yay
-yay-debug
 yazi
 zen-browser-bin
 zram-generator
-zsh

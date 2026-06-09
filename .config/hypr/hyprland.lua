@@ -44,7 +44,7 @@ hl.env("HYPRCURSOR_SIZE", "18")
 -- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
 hl.config({
 	general = {
-		gaps_in = 2,
+		gaps_in = 5,
 		gaps_out = 5,
 
 		border_size = 2,
@@ -79,7 +79,7 @@ hl.config({
 		},
 
 		blur = {
-			enabled = true,
+			enabled = false,
 			size = 3,
 			passes = 1,
 			vibrancy = 0.1696,
@@ -174,6 +174,7 @@ hl.config({
 ---------------
 
 hl.config({
+
 	input = {
 		kb_layout = "br",
 		kb_variant = "abnt2",
@@ -183,7 +184,7 @@ hl.config({
 
 		follow_mouse = 1,
 
-		sensitivity = 0, -- -1.0 - 1.0, 0 means no modification.
+		sensitivity = -0.5, -- -1.0 - 1.0, 0 means no modification.
 
 		touchpad = {
 			natural_scroll = false,
@@ -205,8 +206,12 @@ hl.device({
 	sensitivity = -0.5,
 })
 
----------------------
+hl.device({
+  name = "elan1200:00-04f3:3067-touchpad",
+  enabled = false
+})
 ---- KEYBINDINGS ----
+---------------------
 ---------------------
 
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
@@ -347,24 +352,4 @@ hl.window_rule({
 
 	move = "20 monitor_h-120",
 	float = true,
-})
-
-hl.window_rule({
-	name = "TaskBarHero",
-	match = { class = "steam_app_3678970" },
-
-	-- Comportamento básico de Widget/Barra
-	float = true,
-	pin = false,
-
-	-- Remove decorações que ocupam espaço útil
-	border_size = 0,
-	rounding = 0,
-
-	-- RESOLVENDO O RECORTE:
-	-- Força o jogo a ser uma linha horizontal fina (Largo mas com pouca altura)
-	size = "970 892",
-
-	-- Posiciona no rodapé (Ajuste o 1035 se seu monitor não for 1080p)
-	move = "460 1035",
 })
